@@ -1,0 +1,304 @@
+/* === Mobilní verze === */
+/* HEADER */
+@media (max-width: 1000px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px 50px;
+    border-radius: 8px;
+    z-index: 100;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .navigation-item a {
+    font-size: 25px;
+  }
+
+  .navigation-item a:hover {
+    color: #33ae38;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    transition: filter 0.3s ease;
+  }
+
+  .menu-icon:hover {
+    filter: brightness(0) saturate(100%) sepia(100%) hue-rotate(80deg)
+      saturate(500%) contrast(1);
+  }
+
+  .language-switch {
+    position: absolute;
+    top: 20px;
+    right: 90px;
+    z-index: 110;
+    display: flex;
+  }
+
+  .language-switch img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .logo {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    background: none;
+  }
+
+  .logo img {
+    width: 80px;
+    height: 90px;
+  }
+
+  .overlay p {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+}
+
+/* ABOUT APARTMENT SECTION */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 38px;
+  }
+
+  .lang-en .section-title {
+    font-size: 1.5rem;
+  }
+
+  .info-pair {
+    padding: 40px 15px;
+  }
+
+  .info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: stretch;
+  }
+
+  .about-box,
+  .pricing-box {
+    flex: 1;
+    min-height: auto;
+  }
+
+  .about-box {
+    margin-left: 0;
+  }
+
+  .about-box ul {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .about-box ul li {
+    font-size: 0.95rem;
+    justify-content: center;
+  }
+
+  .about-box p {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  /* Pricing box */
+  .pricing-box h2 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .pricing-box p {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .pricing-box ul li {
+    font-size: 16px;
+    justify-content: center;
+  }
+
+  /* Galerie */
+  .gallery-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-scroll {
+    justify-content: center;
+  }
+
+  .arrow {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+
+  /* Lightbox */
+  .lightbox img {
+    max-width: 95%;
+    max-height: 70%;
+  }
+}
+
+@media (max-width: 1580px) {
+  .about-box,
+  .pricing-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .info-grid {
+    gap: 40px;
+  }
+
+  .info-pair {
+    padding: 50px 30px;
+  }
+
+  .gallery-scroll img {
+    width: 250px;
+    height: 200px;
+  }
+
+  .about-box {
+    margin-left: 0;
+  }
+
+  .about-box ul li {
+    font-size: 20px;
+  }
+
+  .about-box p {
+    font-size: 20px;
+  }
+
+  .pricing-box h2 {
+    font-size: 30px;
+  }
+
+  .pricing-box p {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .pricing-box ul li {
+    font-size: 20px;
+    justify-content: left;
+  }
+}
+
+/* INTERESTING FACTS */
+@media (max-width: 768px) {
+  .island-highlights h2 {
+    font-size: 38px;
+  }
+
+  .island-highlights {
+    padding: 40px 15px;
+  }
+
+  .highlights-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .highlights-grid img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .island-highlights {
+    padding: 30px 10px;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .highlights-grid img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+/* CONTACT AND MAP */
+@media (max-width: 768px) {
+  .contact-box h3 {
+    font-size: 38px;
+  }
+
+  .contact-box p {
+    font-size: 25px;
+  }
+
+  .social-link a {
+    font-size: 25px;
+  }
+
+  .map-title {
+    font-size: 35px;
+  }
+
+  .map-button {
+    font-size: 20px;
+  }
+}
+
+/*REVIEW*/
+@media (max-width: 768px) {
+  .review {
+    padding: 40px 15px;
+  }
+
+  .review-heading {
+    font-size: 38px;
+    margin-bottom: 30px;
+  }
+
+  .review-heading::after {
+    width: 40px;
+    height: 2px;
+  }
+
+  .review-section {
+    flex-direction: column;
+    gap: 16px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .review-card {
+    padding: 16px 20px;
+    border-radius: 10px;
+  }
+
+  .review-text {
+    font-size: 20px;
+  }
+  .review-author {
+    font-size: 18px;
+  }
+}
+
+/* FOOTER */
+@media (max-width: 768px) {
+  footer {
+    font-size: 17px;
+  }
+}

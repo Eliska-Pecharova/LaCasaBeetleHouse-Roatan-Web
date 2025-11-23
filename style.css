@@ -1,0 +1,700 @@
+/*General*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+/* navigation */
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 20px;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  z-index: 110;
+}
+
+.navigation-item a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Handlee";
+  font-size: 25px;
+  transition: color 0.3s ease;
+}
+
+.navigation-item a:hover {
+  color: #103411;
+  text-decoration: underline;
+}
+
+.language-switch {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.language-switch a {
+  display: inline-block;
+  position: relative;
+}
+
+.language-switch img {
+  transition: transform 0.3s ease;
+  width: 32px;
+  height: 32px;
+}
+
+.language-switch img:hover {
+  transform: scale(1.05);
+}
+
+.language-switch a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #004d40;
+  border-radius: 2px;
+}
+
+.logo {
+  padding: 2px 5px;
+  margin-right: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: rgb(194, 237, 230, 0.7);
+}
+
+.logo img {
+  height: 100px;
+  width: 90px;
+}
+
+/* === OVERLAY OBSAH === */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 40px;
+  text-align: center;
+  max-width: 700px;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.overlay h1 {
+  font-size: 45px;
+  margin-bottom: 20px;
+  font-family: "Handlee";
+}
+
+.overlay h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  font-family: "Borel";
+}
+
+.overlay p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.overlay h3 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-family: "Handlee";
+}
+
+/* === SCROLL IKONKA === */
+.scroll-indicator {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 35px;
+  color: #00796b;
+  animation: bounce 2s infinite;
+  z-index: 20;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  transform: translateX(-50%) scale(1.2);
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+/* HERO */
+.hero {
+  background: url("images/bc.jpg") center/cover no-repeat;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+/* APARTMENT */
+/* Nadpis sekce */
+.section-title {
+  text-align: center;
+  font-size: 35px;
+  font-family: "Delius", cursive;
+  font-weight: 800;
+  color: black;
+  margin-bottom: 50px;
+}
+
+/* Wrapper sekce */
+.info-pair {
+  padding: 60px 20px;
+}
+
+/* Grid pro boxy */
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Box s informacemi o apartmánu */
+.about-box,
+.pricing-box {
+  flex: 1 1 50%;
+  max-width: 40%;
+  box-sizing: border-box;
+}
+
+.about-box {
+  margin-left: 90px;
+}
+
+.about-box ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.about-box ul li {
+  background-color: #f0f4f4;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #004d40;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.about-box ul li:hover {
+  transform: scale(1.03);
+}
+
+.about-box p {
+  margin-top: 40px;
+  font-size: 18px;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+/* Box s cenou a podmínkami */
+.pricing-box h2 {
+  font-size: 28px;
+  font-family: "Quicksand";
+  font-weight: 600;
+  color: #004d40;
+  margin-bottom: 20px;
+}
+
+.pricing-box p {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-family: "Quicksand";
+}
+
+.pricing-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pricing-box ul li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Galerie */
+.gallery-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.gallery-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-scroll img {
+  width: 160px;
+  height: 110px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.gallery-scroll img:hover {
+  transform: scale(1.05);
+}
+
+.arrow {
+  background-color: #004d40;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: column;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 6px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.lightbox .nav {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 20px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/*SEKCE KONTAKT + MAPA*/
+.contact-map-pair {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+/*contact*/
+.contact-box {
+  flex: 1 1 400px;
+  max-width: 600px;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.contact-box h3 {
+  font-size: 35px;
+  color: #004d40;
+  margin-bottom: 20px;
+  font-family: "Delius";
+}
+
+.contact-box p {
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: #333;
+  font-family: "Quicksand";
+}
+
+.contact-name {
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-name::before {
+  content: "👤";
+  font-size: 25px;
+}
+
+.contact-box strong {
+  font-size: 1.2rem;
+  color: #2e7d32;
+}
+
+.contact-box a {
+  color: #00796b;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-box a:hover {
+  color: #004d40;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.social-link img {
+  width: 40px;
+  height: 40px;
+}
+
+.social-link a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Quicksand";
+}
+
+/* Mapa */
+.map-box {
+  flex: 1 1 400px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.map-box h2 {
+  font-size: 1.8rem;
+  color: #004d40;
+  margin-bottom: 20px;
+  font-family: "Delius";
+}
+
+.map-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.map-box a {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #00796b;
+  text-decoration: none;
+}
+
+.map-box a:hover {
+  color: #004d40;
+}
+
+.map-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.map-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: #004d40;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+/* Zajímavosti */
+.island-highlights {
+  padding: 60px 20px;
+  background-color: #eef7f2;
+  text-align: center;
+}
+
+.island-highlights h2 {
+  font-size: 2rem;
+  color: #004d40;
+  margin-bottom: 30px;
+  font-family: "Delius";
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.highlights-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.highlights-grid img:hover {
+  transform: scale(1.03);
+}
+
+/*REVIEW*/
+.review {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+/* Nadpis sekce */
+.review-heading {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  color: #004d40;
+  font-family: "Delius";
+  font-size: 35px;
+  position: relative;
+}
+
+/* Dekorativní linka pod nadpisem */
+.review-heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #4caf50;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* Kontejner pro recenze */
+.review-section {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Jednotlivá karta recenze */
+.review-card {
+  background: linear-gradient(135deg, #f0fdf4, #ffffff);
+  border-left: 6px solid #4caf50;
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Text recenze */
+.review-text {
+  font-size: 1.15em;
+  line-height: 1.7;
+  color: #2e2e2e;
+  margin-bottom: 12px;
+  font-family: "Georgia", serif;
+}
+
+/* Autor recenze */
+.review-author {
+  font-family: "Handlee";
+  color: #4caf50;
+  text-align: right;
+  font-weight: 500;
+}
+
+/* ARROW UP */
+.arrow-up {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #c2ede6;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 50%;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.arrow-up.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #004d40;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #fff;
+  position: relative;
+}
+
+.rights-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.rights-popup {
+  display: none;
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #333;
+  z-index: 1000;
+}
+
+.rights-popup li {
+  list-style: none;
+}
+
+.rights-wrapper:hover .rights-popup {
+  display: block;
+}
+
+.rights-popup::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+/*ENGLISH VERSION*/
+.lang-en p,
+.lang-en h2,
+.lang-en li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.lang-en .highlights-grid img {
+  aspect-ratio: 4 / 3;
+  font-size: 0.95rem;
+}
+
+.lang-en .hero .overlay {
+  padding: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.lang-en,
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
